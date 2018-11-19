@@ -48,7 +48,7 @@ export const SearchWrapper = styled.div`
   float:left;
   position: relative;
   .slide-enter {
-    transition: all 1s ease-out;
+    transition: all 0.2s ease-out;
     }
   .slide-enter-active{
     width:250px;

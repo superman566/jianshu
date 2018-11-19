@@ -45,9 +45,14 @@ import {
           </NavItem>
           <SearchWrapper>
             <CSSTransition
-              timeout={200}
-              in
-              ClassNames="slide"
+              timeout={300}
+              in={this.state.focused}
+              classNames={{
+                enter: 'slide-enter',
+                enterActive: 'slide-enter-active',
+                exit: 'slide-exit',
+                exitActive: 'slide-exit-active',
+              }}
             >
               <NavSearch
                 className={this.state.focused ? 'focused': ''}
