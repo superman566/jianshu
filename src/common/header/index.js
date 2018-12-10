@@ -20,8 +20,8 @@ import {
 } from './style';
 
 class Header extends Component {
-  getListArea(show) {
-    if(show){
+  getListArea() {
+    if(this.props.focused){
       return (
         <SearchInfo>
           <SearchInfoTitle>
@@ -29,15 +29,11 @@ class Header extends Component {
             <SearchInfoSwitch>换一批</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>教育</SearchInfoItem>
+            {
+              this.props.list.map((item)=>{
+                return <SearchInfoItem key={item}>{item}</SearchInfoItem>
+              })
+            }
           </SearchInfoList>
         </SearchInfo>
       );
@@ -75,7 +71,7 @@ class Header extends Component {
               />
             </CSSTransition>
             <i className={this.props.focused ? 'focused iconfont icon-fangdajing': 'iconfont icon-fangdajing'}/>
-            {this.getListArea(this.props.focused)}
+            {this.getListArea()}
           </SearchWrapper>
           <Addition>
             <Button className='writing'>
@@ -92,6 +88,7 @@ class Header extends Component {
 const mapStateToProps = (state) => {
   return{
     focused: state.get('header').get('focused'),
+    list: state.get('header').get('list'),
   }
 };
 
