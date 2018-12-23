@@ -38,7 +38,12 @@ class Header extends Component {
         >
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch onClick={()=>{handleChangePage(page,totalPage)}}>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch
+              onClick={ ()=>{handleChangePage(page,totalPage, this.spinIcon)} }
+            >
+              <i ref={(icon)=>{this.spinIcon = icon}} className="iconfont icon-spin spin"/>
+              换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
             {
@@ -81,14 +86,14 @@ class Header extends Component {
                 onBlur = {handleInputBlur}
               />
             </CSSTransition>
-            <i className={focused ? 'focused iconfont icon-fangdajing': 'iconfont icon-fangdajing'}/>
+            <i className={focused ? 'focused iconfont icon-fangdajing zoom': 'iconfont icon-fangdajing zoom'}/>
             {this.getListArea()}
           </SearchWrapper>
           <Addition>
             <Button className='writing'>
               <i className="iconfont icon-icon-test"/>
               写文章</Button>
-            <Button className='reg'>注册</Button>
+            <Button className='reg'>注册</Button>iconfont
           </Addition>
         </Nav>
       </HeaderWrapper>
@@ -121,7 +126,15 @@ const mapDispatchToProps = (dispatch) => {
     handleMouseLeave(){
       dispatch(actionCreators.mouseLeave())
     },
-    handleChangePage(page,totalPage){
+    handleChangePage(page,totalPage, spin){
+      // 转一转动画
+      let originAngle = spin.style.transform.replace(/[^0-9]/ig,'');
+      if(originAngle){
+        originAngle = parseInt(originAngle, 10);
+      } else {
+        originAngle = 0;
+      }
+      spin.style.transform = 'rotate('+ (originAngle + 180) +'deg)';
       if (page < totalPage){
         dispatch(actionCreators.changePage(page+1))
       } else {
