@@ -93,7 +93,7 @@ class Header extends Component {
             <Button className='writing'>
               <i className="iconfont icon-icon-test"/>
               写文章</Button>
-            <Button className='reg'>注册</Button>iconfont
+            <Button className='reg'>注册</Button>
           </Addition>
         </Nav>
       </HeaderWrapper>
