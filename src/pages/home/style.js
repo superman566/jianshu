@@ -22,6 +22,7 @@ export const HomeRight = styled.div`
   float: right;
 `;
 
+// Topic component css
 export const TopicWrapper = styled.div`
   overflow:hidden;
   padding: 20px 0 10px 0;
@@ -50,6 +51,7 @@ export const TopicItem = styled.div`
   }
 `;
 
+// article list component css
 export const ListItem = styled.div`
   overflow: hidden;
   padding: 2% 0;
@@ -76,4 +78,18 @@ export const ListInfo = styled.div`
     line-height: 24px;
     color: #999;
   }
+`;
+
+// recomend component css
+export const RecommendWrapper = styled.div`
+  margin: 4% 8%;
+  width: 60%;
+`;
+
+export const RecommendItem = styled.div`
+  width: 90%;
+  margin: 2% 0;
+  height: 50px;
+  background: url(${(props) => props.imgUrl});
+  background-size: contain;
 `;

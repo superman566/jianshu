@@ -15,12 +15,13 @@ class List extends Component {
             <h3 className='title'>{item.get('title')}</h3>
             <p className='desc'>{item.get('desc')}</p>
           </ListInfo>
-          <img className='pic'alt={item.get('title')} src={item.get('imgUrl')}/>
+          <img className='pic' alt={item.get('title')} src={item.get('imgUrl')}/>
         </ListItem>
       ))
     )
   }
 }
+
 const mapState = (state) => ({
   articleList: state.getIn(['home','articleList'])
 });

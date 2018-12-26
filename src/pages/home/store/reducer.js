@@ -39,6 +39,16 @@ const defaultState = fromJS({
       imgUrl: '//upload-images.jianshu.io/upload_images/14279122-9a0d7155031524fb.png?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240',
     },
   ],
+  recommendList:[
+    {
+      id: 1,
+      imgUrl: `http://cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png`,
+    },
+    {
+      id: 2,
+      imgUrl: `http://cdn2.jianshu.io/assets/web/banner-s-4-b70da70d679593510ac93a172dfbaeaa.png`,
+    }
+  ],
 });
 
 export default (state = defaultState, action) =>{
