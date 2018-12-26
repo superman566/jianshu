@@ -80,7 +80,7 @@ export const ListInfo = styled.div`
   }
 `;
 
-// recomend component css
+// recommend component css
 export const RecommendWrapper = styled.div`
   margin: 4% 8%;
   width: 60%;
@@ -92,4 +92,15 @@ export const RecommendItem = styled.div`
   height: 50px;
   background: url(${(props) => props.imgUrl});
   background-size: contain;
+`;
+
+// writer component css
+export const WriterWrapper = styled.div`
+  margin: 4% 8%;
+  width: 60%;
+  height: 300px;
+  border-bottom: 1px solid #dcdcdc;
+  border-radius: 3px;
+  line-height: 300px;
+  text-align: center;
 `;
