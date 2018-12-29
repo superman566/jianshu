@@ -80,6 +80,18 @@ export const ListInfo = styled.div`
   }
 `;
 
+export const LoadMore = styled.div`
+  width: 100%;
+  height: 40px;
+  margin: 3% 0;
+  line-height: 40px;
+  background: #a5a5a5;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+`;
+
 // recommend component css
 export const RecommendWrapper = styled.div`
   margin: 4% 8%;
