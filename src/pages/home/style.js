@@ -116,3 +116,16 @@ export const WriterWrapper = styled.div`
   line-height: 300px;
   text-align: center;
 `;
+
+//回到顶部
+export const BackTop = styled.div`
+  position: fixed;
+  right: 5%;
+  bottom: 100px;
+  width: 6%
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+`;
