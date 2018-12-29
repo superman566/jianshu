@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { actionCreators } from '../store';
 import {
@@ -7,7 +7,7 @@ import {
   LoadMore
 } from '../style';
 
-class List extends Component {
+class List extends PureComponent {
   render() {
     const { articleList, page, getMoreList } = this.props;
     return (
